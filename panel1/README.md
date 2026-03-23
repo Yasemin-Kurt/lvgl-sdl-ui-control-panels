@@ -14,10 +14,10 @@ This project demonstrates **Panel 1** of our LVGL-based SDL simulator control pa
 Here are screenshots from the SDL simulator showing Panel 1 in action:
 
 **Screen 1: Initial State**  
-![Simulator Screen 1](screen1.png)
+![simulator_outputs](screen1.png)
 
 **Screen 2: After 5 Seconds (Brightness Change)**  
-![Simulator Screen 1](screen2.png)
+![simulator_outputs](screen2.png)
 
 ## Required Files
 
