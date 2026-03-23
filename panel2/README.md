@@ -36,6 +36,20 @@ Fixed-position control buttons:
 
 ---
 
+## 🎨 UI Design Characteristics
+
+This panel follows a **simpler and flatter design approach**:
+
+- No shadow or depth effects
+- Minimal visual styling
+- Focus on functional grouping rather than visual decoration
+
+This makes the interface:
+- Cleaner
+- Easier to scale
+- More suitable for structured control systems
+
+---
 ## ⚙️ Technical Details
 
 * Built with **LVGL graphics library**
