@@ -7,6 +7,19 @@ This project demonstrates a detailed control interface using LVGL with the SDL s
 - **Left Panel**: Contains multiple groups of buttons. Each group may span multiple rows, giving the interface a flexible layout. Buttons feature labels and icons representing various control units.
 - **Right Panel**: Provides main actions such as Power Status, Screen Brightness, Sound, and Home. Each button offers visual feedback with shadows and styled indicators.
 
+## 🎨 UI Design Characteristics
+
+This panel emphasizes a **more visual and styled interface design**:
+
+- Uses shadow and depth effects
+- Focus on visual clarity and user-friendly appearance
+- More direct and static layout structure
+
+This makes the interface:
+- More intuitive for users
+- Visually richer
+- Suitable for straightforward control scenarios
+
 ## Dynamic Behavior
 
 - The "Screen Brightness" button changes color after 5 seconds, simulating interactive feedback.
