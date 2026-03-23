@@ -6,7 +6,9 @@ This project demonstrates a detailed control interface using LVGL with the SDL s
 
 ## 📸 Preview
 
+
 ![Panel1 Simulator](panel1/simulator_outputs/screen1.png)
+
 
 ---
 
@@ -48,7 +50,7 @@ This design makes the interface:
 
 - **Left panel**: flexible group layout, dynamic row and column placement  
 - **Right panel**: buttons with fixed positions for consistent actions  
-- **Simulation**: 5-second interactive test triggers changes in the **Screen Brightness button text color** and also updates its **icon to a different image**, demonstrating user preference-based dynamic updates
+- **Simulation**: 5-second interactive test triggers changes in the **Screen Brightness button text color** and updates its **icon**, demonstrating user preference-based dynamic behavior
 
 ---
 
@@ -67,11 +69,15 @@ This design makes the interface:
 
 - **Initial State**: Main screen with grouped buttons and default visuals.
 
+
 ![Simulator Screen 1](panel1/simulator_outputs/screen1.png)
+
 
 - **After 5 Seconds**: The **Screen Brightness button on the right panel changes its text color and its icon is replaced by a different image**, reflecting user preference-based dynamic behavior.
 
+
 ![Simulator Screen 2](panel1/simulator_outputs/screen2.png)
+
 
 ---
 
@@ -82,11 +88,9 @@ This design makes the interface:
 - `main.c`
 - `arayuz.c`
 - `arayuz.h`
+- `CMakeLists.txt`
 
 **From the repository root**:
 
 - `images/` (common icons used across panels)
 - `lv_conf.h`
-- `CMakeLists.txt`
-
-> Both sets of files are required for the simulator to function correctly.
