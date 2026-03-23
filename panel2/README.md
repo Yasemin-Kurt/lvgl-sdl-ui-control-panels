@@ -1,7 +1,7 @@
 # Panel 2 – LVGL SDL UI Control Panel
 
-This project is a **control panel user interface** developed using **LVGL** with the **SDL simulator**.
-It represents a structured UI layout with grouped control buttons and a side control panel.
+This project is a **basic control panel user interface** developed using **LVGL** with the **SDL simulator**.  
+It represents a simple UI layout with grouped control buttons and a side control panel.
 
 ---
 
@@ -17,60 +17,65 @@ Panel 2 is designed as a **multi-group control interface** consisting of:
 
 ### 🔹 Left Panel (Grouped Buttons)
 
-* Buttons are organized into **logical groups**
-* Each group is split into **multiple rows dynamically**
+- Buttons are organized into **logical groups**.
+- Users can **arrange buttons within each group in both rows and columns**, allowing flexible placement.
+- The **Extra1 button** is included to demonstrate:
+  - Adding a new button
+  - Adding a new icon/image
+  - Adding a new text label
+  
+  This proves that button additions and visual/text updates are easy to perform through the code structure.
 
-* Each button contains:
-
-  * Text label
-  * Icon (image)
+- Each button contains:
+  - Text label
+  - Icon (image)
 
 ### 🔹 Right Panel (Quick Actions)
 
-Fixed-position control buttons:
-
-* Power output status
-* Screen brightness
-* Sound control
-* Home navigation
+- Panel contains **buttons with fixed positions**, providing main actions such as:
+  - Power output status
+  - Screen brightness
+  - Sound control
+  - Home navigation
 
 ---
 
 ## 🎨 UI Design Characteristics
 
-This panel follows a **simpler and flatter design approach**:
+This panel follows a **simpler, flat design**:
 
-- No shadow or depth effects
+- No shadows or depth effects
 - Minimal visual styling
-- Focus on functional grouping rather than visual decoration
+- Focus on functional grouping rather than decorative elements
 
 This makes the interface:
-- Cleaner
-- Easier to scale
-- More suitable for structured control systems
+
+- Cleaner and easy to read
+- Easy to scale or extend
+- Suitable for structured control systems
 
 ---
+
 ## ⚙️ Technical Details
 
-* Built with **LVGL graphics library**
-* Runs on **SDL-based simulation environment**
-* Uses:
-
-  * Dynamic layout calculation (`ceil`, grouping logic)
-  * Custom UI structuring (`row_group`)
-  * Image-based buttons
+- Built with **LVGL graphics library**
+- Runs on **SDL-based simulation environment**
+- Uses:
+  - Dynamic layout calculation (`ceil`, grouping logic)
+  - Custom UI structuring (`row_group`)
+  - Image-based buttons
 
 ---
 
 ## 📁 Required Files
 
-This panel **does not work standalone with only `main.c`**.
+This panel **does not work standalone with only `main.c`**.  
 
 You must also include the following from the main repository:
 
-* `CMakeLists.txt`
-* `lv_conf.h`
-* `images/` folder (all image source files)
+- `CMakeLists.txt`
+- `lv_conf.h`
+- `images/` folder (all image source files)
 
 ---
 
@@ -78,25 +83,23 @@ You must also include the following from the main repository:
 
 Inside `CMakeLists.txt`, the following line exists:
 
-```cmake
+\`\`\`cmake
 add_executable(main main.c mouse_cursor_icon.c images/arayuz.c images/relay_off.c images/home.c images/brigthness.c images/lightning.c images/sound_on.c)
-```
+\`\`\`
 
-### 🔥 You MUST remove:
+🔥 You MUST remove:
 
-```
+\`\`\`cmake
 images/arayuz.c
-```
+\`\`\`
 
-### ✅ Correct version:
+✅ Correct version:
 
-```cmake
+\`\`\`cmake
 add_executable(main main.c mouse_cursor_icon.c images/relay_off.c images/home.c images/brigthness.c images/lightning.c images/sound_on.c)
-```
+\`\`\`
 
-### Reason:
-
-* This project already includes all required UI logic inside `main.c`
+Reason: This project already includes all required UI logic inside `main.c`.
 
 ---
 
@@ -104,44 +107,42 @@ add_executable(main main.c mouse_cursor_icon.c images/relay_off.c images/home.c 
 
 The left panel layout is built using a custom structure:
 
-```c
+\`\`\`c
 struct row_group {
     const char **texts;
     const lv_img_dsc_t **imgs;
     int total_count;
     int row_count;
 };
-```
+\`\`\`
 
 This allows:
 
-* Flexible grouping of UI elements
-* Automatic row distribution
-* Scalable UI design
+- Flexible grouping of UI elements
+- Automatic row distribution
+- Easy addition of new buttons, images, or labels
 
 ---
 
 ## 🎯 Features
 
-* Group-based dynamic button layout
-* Image + text combined UI elements
-* Clean panel separation (left controls / right actions)
-* SDL simulation ready
-* Modular and extendable structure
+- Group-based dynamic button layout
+- Users can add buttons, text, and images easily via code
+- Clean panel separation (left controls / right actions)
+- SDL simulation ready
+- Modular and extendable structure
+- Simple, flat design (no shadows or extra styling)
 
 ---
 
 ## 🛠 Notes
 
-* This project is intended for **UI simulation and design demonstration**
-* Hardware integration is not included
-* All layout logic is handled programmatically (no GUI designer)
+- Intended for UI simulation and basic design demonstration
+- Hardware integration is not included
+- All layout logic is handled programmatically (no GUI designer)
 
 ---
 
 ## 🚀 Summary
 
-Panel 2 demonstrates a **structured and scalable LVGL UI design** using grouped layouts and control panels, suitable for embedded interface prototyping and simulation.
-
----
-
+Panel 2 demonstrates a structured yet simple LVGL UI design, allowing flexible group placement and easy extension, suitable for embedded interface prototyping and simulation.
