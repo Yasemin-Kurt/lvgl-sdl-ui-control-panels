@@ -69,58 +69,12 @@ This makes the interface:
 
 ## 📁 Required Files
 
-This panel **does not work standalone with only `main.c`**.  
+This panel **does not work standalone with only the files inside the Panel2 folder**.  
 
 You must also include the following from the main repository:
 
-- `CMakeLists.txt`
 - `lv_conf.h`
 - `images/` folder (all image source files)
-
----
-
-## ❗ Important Configuration (CMake Fix)
-
-Inside `CMakeLists.txt`, the following line exists:
-
-\`\`\`cmake
-add_executable(main main.c mouse_cursor_icon.c images/arayuz.c images/relay_off.c images/home.c images/brigthness.c images/lightning.c images/sound_on.c)
-\`\`\`
-
-🔥 You MUST remove:
-
-\`\`\`cmake
-images/arayuz.c
-\`\`\`
-
-✅ Correct version:
-
-\`\`\`cmake
-add_executable(main main.c mouse_cursor_icon.c images/relay_off.c images/home.c images/brigthness.c images/lightning.c images/sound_on.c)
-\`\`\`
-
-Reason: This project already includes all required UI logic inside `main.c`.
-
----
-
-## 🧠 Key Implementation Concept
-
-The left panel layout is built using a custom structure:
-
-\`\`\`c
-struct row_group {
-    const char **texts;
-    const lv_img_dsc_t **imgs;
-    int total_count;
-    int row_count;
-};
-\`\`\`
-
-This allows:
-
-- Flexible grouping of UI elements
-- Automatic row distribution
-- Easy addition of new buttons, images, or labels
 
 ---
 
@@ -135,13 +89,25 @@ This allows:
 
 ---
 
-## 🛠 Notes
+## Simulator Output
 
-- Intended for UI simulation and basic design demonstration
-- Hardware integration is not included
-- All layout logic is handled programmatically (no GUI designer)
+- **Initial State**: Main screen with grouped buttons and default visuals.
 
 ---
+
+## 📁 Required Files
+
+**Inside this folder (Panel2):**
+
+- `main.c`
+- `CMakeLists.txt`
+
+**From the repository root:**
+
+- `images/` (all image source files)
+- `lv_conf.h`
+
+> All these files are required for the simulator to function correctly.
 
 ## 🚀 Summary
 
