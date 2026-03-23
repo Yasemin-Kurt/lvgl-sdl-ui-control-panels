@@ -31,11 +31,15 @@ The screenshots below demonstrate Panel 2 running in the SDL simulator:
 
 **Initial State**
 
-![Simulator Screen 1](panel2/sim_outputs/sonuc1.png)
+
+![Simulator Screen 1](sim_outputs/sonuc1.png)
+
 
 **After 5 Seconds (Brightness Change)**
 
-![Simulator Screen 2](panel2/sim_outputs/sonuc2.png)
+
+![Simulator Screen 2](sim_outputs/sonuc2.png)
+
 
 ## Required Files
 
