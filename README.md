@@ -13,11 +13,16 @@ This repository includes two separate projects:
 - Users can add and rearrange buttons within each group
 - Includes the Extra1 button to demonstrate adding new buttons, images, or text labels
 - No shadows or triggered visual effects
+- All UI code is contained in a **single `main.c` file** for simplicity
 
 ### Panel1 – Detailed Control Console
 - Advanced design with shadowing, layered effects, and dynamic behavior
 - Demonstrates interactive updates (5-second simulation triggers text and image changes)
 - Complex multi-row/grouped left panel with user-configurable placement
+- Contains additional files (`arayuz.c` and `arayuz.h`) to **organize the UI logic**:
+  - `main.c` contains the general fixed code for the interface  
+  - `arayuz.c / arayuz.h` contain detailed layout and UI elements for better modularity
+  -  This separation was necessary because the interface complexity increased, allowing for better organization and maintainability
 
 > **Recommendation:** Start with Panel2 to understand the basic layout and functionality, then explore Panel1 for more advanced features.
 
@@ -28,23 +33,17 @@ This repository includes two separate projects:
 - **Images:** All `.png`, `.c`, and `.h` files used in the projects are in the `images/` folder.  
 
   **Adding your own images:**
+
   1. Convert `.png` images to `.c` using the LVGL online image converter
   2. Manually create the corresponding `.h` files
-  3. Include new `.c` files in `CMakeLists.txt` for compilation
-
-- **CMakeLists.txt:** Any new `.c` files (buttons, images, etc.) must be included here, for example:
-
-\`\`\`cmake
-
-add_executable(main main.c mouse_cursor_icon.c images/relay_off.c images/home.c images/brigthness.c images/lightning.c images/sound_on.c)
-
-\`\`\`
-
-> Remove any unnecessary files such as `images/home.c` if not used.
+  3. Include new `.c` files in the **panel-specific `CMakeLists.txt`** inside the panel folder
+  4. Open the **panel-specific `CMakeLists.txt`** inside the panel folder (`panel1/` or `panel2/`) and add your `.c` files to the `add_executable()` line.
+  
+     **CMakeLists.txt:** Each panel has its own `CMakeLists.txt` located inside its folder (`panel1/` or `panel2/`).  
+     Use this panel-specific file for compilation.
 
 - **Configuration files:**
   - `lv_conf.h` – LVGL configuration settings
-  - `CMakeLists.txt` – Updated with project-specific source files
   - Project folder: Include the project folder you wish to run (`panel1/` or `panel2/`) with its files
 
 ---
@@ -64,15 +63,13 @@ Before running these projects, ensure the following are installed:
 
 After completing prerequisites and including all necessary files:
 
-\`\`\`bash
+cd /mnt/c/Users/LENOVO/lv_sim_eclipse_sdl/build  
 
-cd /mnt/c/Users/LENOVO/lv_sim_eclipse_sdl/build
-
-make -j8
+make -j8  
 
 ../bin/main
 
-\`\`\`
+
 
 > File paths may need to be adjusted depending on your system setup. Compilation may produce errors if file paths or locations differ from the examples. Update paths as needed.
 
@@ -80,11 +77,11 @@ make -j8
 
 ## Usage Instructions
 
-1. Complete prerequisite installations (LVGL, SDL2, etc.)
-2. Include the full `images/` folder, `lv_conf.h`, and `CMakeLists.txt` in your build directory
-3. Include the project folder you wish to run (`panel1/` or `panel2/`) with its files
-4. Compile and run using the commands above
-5. Adjust file paths in the code and `CMakeLists.txt` according to your system
+- Complete prerequisite installations (LVGL, SDL2, etc.)
+- Include the full images/ folder, `lv_conf.h`, and the panel-specific in your build directory
+- Include the project folder you wish to run (`panel1/` or `panel2/`) with its files
+- Compile and run using the commands above
+- Adjust file paths in the code and CMakeLists.txt according to your system
 
 ---
 
@@ -94,12 +91,14 @@ make -j8
 - Clean, simple interface
 - Users can rearrange buttons within groups in both rows and columns
 - Extra1 button demonstrates adding new buttons, images, and labels
+- All UI logic is contained in `main.c` for simplicity
 
 ### Panel1
 - Advanced interface with shadows, layered effects, and dynamic visual feedback
 - 5-second simulation triggers changes in button text and images based on user interaction
 - Left panel groups allow flexible placement of buttons, background buttons visually represent different units
 - Right panel contains buttons with fixed positions for main actions
+- UI logic is split across `main.c` and `arayuz.c / arayuz.h` for better organization and maintainability
 
 ---
 
