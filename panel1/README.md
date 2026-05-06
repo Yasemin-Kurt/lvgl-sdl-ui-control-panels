@@ -7,7 +7,7 @@ This project demonstrates a detailed control interface using LVGL with the SDL s
 ## 📸 Preview
 
 
-![Panel1 Simulator](panel1/simulator_outputs/screen1.png)
+![Panel1 Simulator](panel1/simulator_outputs/screen1.png.png)
 
 
 ---
@@ -70,13 +70,13 @@ This design makes the interface:
 - **Initial State**: Main screen with grouped buttons and default visuals.
 
 
-![Simulator Screen 1](panel1/simulator_outputs/screen1.png)
+![Simulator Screen 1](panel1/simulator_outputs/screen1.png.png)
 
 
 - **After 5 Seconds**: The **Screen Brightness button on the right panel changes its text color and its icon is replaced by a different image**, reflecting user preference-based dynamic behavior.
 
 
-![Simulator Screen 2](panel1/simulator_outputs/screen2.png)
+![Simulator Screen 2](panel1/simulator_outputs/screen2.png.png)
 
 
 ---
