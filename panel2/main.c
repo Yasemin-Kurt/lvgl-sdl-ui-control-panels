@@ -61,9 +61,9 @@ struct row_group {
 
 /* Sol panel veri - Grup 1: ilk iki satır bir arada */
 const char *group1_texts[] = {
-    "  KULLANICI\nBILGISAYARI", "OPERATOR\n     ISITICI",
-    "KAMERA", "KLIMA-1",
-    "KLIMA-2", "      KGK\n      (GY1)\n(GY2 & GY3)", "SELTER ICI\n     PRIZ","SELTER DIS\n     PRIZ","Extra1"
+    "A1", "B1",
+    "C1", "D1",
+    "E1", "F1", "G1","H1","Extra1"
 };
 
 struct { const void *img; } group1_imgs[] = {
@@ -73,8 +73,8 @@ struct { const void *img; } group1_imgs[] = {
 
 /* Grup 2: son iki satır bir arada */
 const char *group2_texts[] = {
-    "YEDEK AC\n    (3FAZ)","YEDEK AC\n    (1FAZ)", "AYDINLATMA",
-    "   AC DC\nCEVIRICI 1", "   AC DC\nCEVIRICI 2", "   AC DC\nCEVIRICI 3"
+    "A2","B2", "C2",
+    "D2", "E2", "F2"
 };
 
 struct { const void *img; } group2_imgs[] = {
@@ -131,7 +131,7 @@ struct {
     int x;
     int y;
 } sag_buttons[] = {
-    {"    GUC CIKIS\n   DURUMLARI \n          (4/4)", &lightning, 650, 10},
+    {"CIKIS \n       (4/4)", &lightning, 650, 10},
     {"   EKRAN\nPARLAKLIGI", &brigthness, 650, 155},
     {"SES", &sound_on, 650, 305},
     {"  ANA \nSAYFA", &home, 650, 450}
