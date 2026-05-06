@@ -17,22 +17,22 @@ lv_obj_t *ekran_img = NULL;
 
 /* Sol panel verileri */
 const char *group1_texts[] = {
-    "  OPERATOR\n   KONSOLU", "SES ANH\n MATRISI",
-    "  IC KONUSMA\nUZAK KOMUTA", "kbrn", "deneme\n butn5"
+    "  A Butonu", "B Butonu",
+    "  C Butonu", "D Butonu", "deneme\n butn5"
 };
 const uint8_t *group1_imgs[] = {
     relay_off, relay_off, relay_off, relay_off, relay_off
 };
 
 const char *group2_texts[] = {
-    "KESTIRME\n ALMACI","  KESTIRME\nANTEN ANH"
+    "A Butonu","  B Butonu"
 };
 const uint8_t *group2_imgs[] = {
     relay_off, relay_off
 };
 
 const char *group3_texts[] = {
-    "  YEDEK\n   DC-1",  "  YEDEK\n   DC-2"
+    "  A Butonu",  "  B Butonu"
 };
 const uint8_t *group3_imgs[] = {
     relay_off, relay_off
@@ -47,7 +47,7 @@ const int left_groups_count = sizeof(left_groups)/sizeof(left_groups[0]);
 
 /* Sağ panel butonları */
 struct sag_btn sag_buttons[] = {
-    {"    GUC CIKIS\n   DURUMLARI \n          (3/4)", lightning, 650, 10},
+    {"CIKIS\n    \n   (3/4)", lightning, 650, 10},
     {"   EKRAN\nPARLAKLIGI", brigthness, 650, 155}, // ekran parlaklığı
     {"SES", sound_on, 650, 305},
     {"  ANA \nSAYFA", home, 650, 450}
@@ -105,8 +105,8 @@ void create_left_panel_groups(lv_obj_t *parent,
 
     /* Büyük buton üstü başlıklar */
     const char *top_labels[] = {
-        "KONSOL VE KONUSMA BIRIMLERI",  // 1. büyük buton
-        "KESTIRME BIRIMLERI",           // 2. büyük buton
+        "BIRIM 1",  // 1. büyük buton
+        "BIRIM 2",           // 2. büyük buton
         ""                               // 3. büyük buton boş
     };
 
