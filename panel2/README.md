@@ -7,7 +7,7 @@ It represents a simple UI layout with grouped control buttons and a side control
 
 ## 📸 Preview
 
-![Panel2 UI](./sim_output.png)
+![Panel2 UI](./sim_output1.png)
 
 ---
 
